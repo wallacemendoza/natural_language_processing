@@ -28,6 +28,10 @@ The baseline model uses `cleaned_review` as the feature and `sentiment` as the t
 
 The TF-IDF vectorizer and Logistic Regression classifier are contained in one scikit-learn Pipeline. This ensures that text features are fitted only on the training partition and prevents data leakage into the testing partition.
 
+## Libraries and Tools
+
+The project uses Python, pandas, scikit-learn, and matplotlib, with Visual Studio Code, Git, and GitLab supporting development and version control. A detailed description of the implementation libraries and development tools is available in [requirement_c_libraries_tools.md](requirement_c_libraries_tools.md).
+
 ## Project Structure
 
 ```text
@@ -37,9 +41,10 @@ task_2/
 |-- results/
 |-- main.py
 |-- requirements.txt
+|-- requirement_c_libraries_tools.md
 `-- README.md
 ```
 
 ## Current Status
 
-Requirement B complete: baseline TF-IDF and Logistic Regression sentiment classification model implemented and validated.
+Requirements B and C complete. The baseline NLP model is implemented, and the libraries and development tools used by the system have been documented.
