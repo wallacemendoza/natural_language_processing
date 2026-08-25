@@ -1,14 +1,28 @@
 from pathlib import Path
 
+import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import (
+    ConfusionMatrixDisplay,
+    accuracy_score,
+    classification_report,
+    confusion_matrix,
+    f1_score,
+    precision_score,
+    recall_score,
+)
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_FILE = BASE_DIR / "data" / "restaurant_reviews_processed.csv"
+RESULTS_DIR = BASE_DIR / "results"
+METRICS_FILE = RESULTS_DIR / "baseline_metrics.csv"
+CLASSIFICATION_REPORT_FILE = RESULTS_DIR / "baseline_classification_report.csv"
+CONFUSION_MATRIX_FILE = RESULTS_DIR / "baseline_confusion_matrix.png"
 RANDOM_STATE = 42
 TEST_SIZE = 0.20
 REQUIRED_COLUMNS = {
@@ -132,6 +146,81 @@ def demonstrate_predictions(model: Pipeline) -> None:
         print(f"Prediction: {sentiment_name}")
 
 
+def evaluate_model(
+    model: Pipeline, testing_features: pd.Series, testing_target: pd.Series
+) -> dict[str, float | int]:
+    """Evaluate the trained baseline model on the independent test partition."""
+    predictions = model.predict(testing_features)
+    accuracy = accuracy_score(testing_target, predictions)
+    precision = precision_score(testing_target, predictions)
+    recall = recall_score(testing_target, predictions)
+    f1 = f1_score(testing_target, predictions)
+    matrix = confusion_matrix(testing_target, predictions, labels=[0, 1])
+    true_negative, false_positive, false_negative, true_positive = matrix.ravel()
+    report = classification_report(
+        testing_target,
+        predictions,
+        labels=[0, 1],
+        target_names=["negative", "positive"],
+        output_dict=True,
+        zero_division=0,
+    )
+
+    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+    metrics = {
+        "accuracy": accuracy,
+        "precision": precision,
+        "recall": recall,
+        "f1_score": f1,
+        "true_negative": int(true_negative),
+        "false_positive": int(false_positive),
+        "false_negative": int(false_negative),
+        "true_positive": int(true_positive),
+        "test_observations": len(testing_target),
+    }
+    pd.DataFrame(metrics.items(), columns=["metric", "value"]).to_csv(
+        METRICS_FILE, index=False
+    )
+    pd.DataFrame(report).transpose().to_csv(CLASSIFICATION_REPORT_FILE)
+
+    display = ConfusionMatrixDisplay(
+        confusion_matrix=matrix,
+        display_labels=["Negative", "Positive"],
+    )
+    figure, axes = plt.subplots(figsize=(6, 5))
+    display.plot(ax=axes, values_format="d")
+    axes.set_title("Baseline Sentiment Model Confusion Matrix")
+    figure.tight_layout()
+    figure.savefig(CONFUSION_MATRIX_FILE, dpi=200)
+    plt.close(figure)
+
+    print("\n" + "=" * 60)
+    print("BASELINE MODEL EVALUATION")
+    print("=" * 60)
+    print(f"Test observations: {len(testing_target)}")
+    print(f"\nAccuracy:  {accuracy:.4f}")
+    print(f"Precision: {precision:.4f}")
+    print(f"Recall:    {recall:.4f}")
+    print(f"F1-score:  {f1:.4f}")
+    print(f"\nConfusion Matrix:\n{matrix}")
+    print(f"\nTrue negatives: {true_negative}")
+    print(f"False positives: {false_positive}")
+    print(f"False negatives: {false_negative}")
+    print(f"True positives: {true_positive}")
+    print("\nClassification Report:")
+    print(
+        classification_report(
+            testing_target,
+            predictions,
+            target_names=["negative", "positive"],
+            digits=4,
+            zero_division=0,
+        )
+    )
+    print("=" * 60)
+    return metrics
+
+
 def print_model_summary(
     training_features: pd.Series,
     testing_features: pd.Series,
@@ -172,6 +261,7 @@ def main() -> None:
     model = build_baseline_model()
     feature_count = train_model(model, training_features, training_target)
     demonstrate_predictions(model)
+    evaluate_model(model, testing_features, testing_target)
     print_model_summary(
         training_features,
         testing_features,
