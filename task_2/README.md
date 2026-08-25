@@ -32,6 +32,10 @@ The TF-IDF vectorizer and Logistic Regression classifier are contained in one sc
 
 The project uses Python, pandas, scikit-learn, and matplotlib, with Visual Studio Code, Git, and GitLab supporting development and version control. A detailed description of the implementation libraries and development tools is available in [requirement_c_libraries_tools.md](requirement_c_libraries_tools.md).
 
+## Implementation Documentation
+
+The Requirement D implementation description is documented in [requirement_d_implementation.md](requirement_d_implementation.md).
+
 ## Project Structure
 
 ```text
@@ -42,9 +46,10 @@ task_2/
 |-- main.py
 |-- requirements.txt
 |-- requirement_c_libraries_tools.md
+|-- requirement_d_implementation.md
 `-- README.md
 ```
 
 ## Current Status
 
-Requirements B and C complete. The baseline NLP model is implemented, and the libraries and development tools used by the system have been documented.
+Requirements B, C, and D complete. The baseline NLP model is implemented, the development libraries and tools are documented, and the implementation process has been described.
