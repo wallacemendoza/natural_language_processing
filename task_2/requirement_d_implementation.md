@@ -10,4 +10,4 @@ Python provides the implementation runtime, while Visual Studio Code is used to 
 
 Siino, M., Tinnirello, I., & La Cascia, M. (2024). Is text preprocessing still worth the time? A comparative survey on the influence of popular preprocessing methods on Transformers and traditional classifiers. *Information Systems, 121*, Article 102342. https://doi.org/10.1016/j.is.2023.102342
 
-Srianan, S., Nanthaamornphong, A., & Phucharoen, C. (2025). Advancing tourism sentiment analysis: A comparative evaluation of traditional machine learning, deep learning, and transformer models on imbalanced datasets. *Information Technology & Tourism, 27*(4), 1011-1045. https://doi.org/10.1007/s40558-025-00336-0
+Srianan, S., Nanthaamornphong, A., & Phucharoen, C. (2025). Advancing tourism sentiment analysis: A comparative evaluation of traditional machine learning, deep learning, and transformer models on imbalanced datasets. *Information Technology & Tourism, 27*(4), 1011–1045. https://doi.org/10.1007/s40558-025-00336-0

@@ -8,6 +8,6 @@ The confusion matrix contains 87 true negatives, 13 false positives, 11 false ne
 
 ## References
 
-Deshpande, S. B., Tangod, K. K., Srinivasaiah, S. H., Alahmadi, A. A., Alwetaishi, M., Ong Michael, G. K., & Rajendran, S. (2025). Elevating educational insights: Sentiment analysis of faculty feedback using advanced machine learning models. *Advances in Continuous and Discrete Models, 2025*, Article 89. https://doi.org/10.1186/s13662-025-03933-9
+Deshpande, S. B., Tangod, K. K., Srinivasaiah, S. H., Alahmadi, A. A., Alwetaishi, M., Goh, M. K. O., & Rajendran, S. (2025). Elevating educational insights: Sentiment analysis of faculty feedback using advanced machine learning models. *Advances in Continuous and Discrete Models, 2025*, Article 89. https://doi.org/10.1186/s13662-025-03933-9
 
-Srianan, S., Nanthaamornphong, A., & Phucharoen, C. (2025). Advancing tourism sentiment analysis: A comparative evaluation of traditional machine learning, deep learning, and transformer models on imbalanced datasets. *Information Technology & Tourism, 27*(4), 1011-1045. https://doi.org/10.1007/s40558-025-00336-0
+Srianan, S., Nanthaamornphong, A., & Phucharoen, C. (2025). Advancing tourism sentiment analysis: A comparative evaluation of traditional machine learning, deep learning, and transformer models on imbalanced datasets. *Information Technology & Tourism, 27*(4), 1011–1045. https://doi.org/10.1007/s40558-025-00336-0

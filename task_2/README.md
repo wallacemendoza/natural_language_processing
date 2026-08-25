@@ -36,6 +36,10 @@ The baseline model was evaluated on the held-out test partition: accuracy 88.00%
 
 GridSearchCV performed five-fold stratified cross-validation on the training partition only, using F1-score to tune `classifier__C`, `tfidf__ngram_range`, and `tfidf__sublinear_tf`. The selected parameters were `C=4.0`, unigram features, and `sublinear_tf=False`. The optimized model achieved accuracy 88.50%, precision 87.38%, recall 90.00%, and F1-score 88.67%, compared with baseline values of 88.00%, 87.25%, 89.00%, and 88.12%. The complete optimization discussion is available in [requirement_f_optimization.md](requirement_f_optimization.md).
 
+## Sources and Citation Audit
+
+APA source acknowledgment and the cross-requirement citation audit are documented in [requirement_g_sources.md](requirement_g_sources.md).
+
 ## Libraries and Tools
 
 The project uses Python, pandas, scikit-learn, and matplotlib, with Visual Studio Code, Git, and GitLab supporting development and version control. A detailed description of the implementation libraries and development tools is available in [requirement_c_libraries_tools.md](requirement_c_libraries_tools.md).
@@ -66,9 +70,10 @@ task_2/
 |-- requirement_d_implementation.md
 |-- requirement_e_evaluation.md
 |-- requirement_f_optimization.md
+|-- requirement_g_sources.md
 `-- README.md
 ```
 
 ## Current Status
 
-Requirements B through F are complete. The baseline sentiment model has been implemented and evaluated, and the model has been optimized using training-only stratified cross-validation and GridSearchCV. Baseline and optimized evaluation artifacts are retained separately for comparison.
+Requirements B through G are complete. The baseline sentiment model has been implemented, evaluated, and optimized, and all external sources used in the project have been audited for APA-style citation and reference consistency. Final submission-document assembly and GitLab branch-history capture remain.
