@@ -18,6 +18,16 @@ Task 2 builds, evaluates, and optimizes a binary sentiment classification model 
 6. Algorithm comparison
 7. Final model selection
 
+## Baseline Model
+
+The baseline model uses `cleaned_review` as the feature and `sentiment` as the target. It represents text with TF-IDF and classifies sentiment with Logistic Regression.
+
+- Train/test split: 80/20
+- Stratification: enabled
+- Random state: 42
+
+The TF-IDF vectorizer and Logistic Regression classifier are contained in one scikit-learn Pipeline. This ensures that text features are fitted only on the training partition and prevents data leakage into the testing partition.
+
 ## Project Structure
 
 ```text
@@ -32,4 +42,4 @@ task_2/
 
 ## Current Status
 
-Project architecture initialized and processed dataset validated.
+Requirement B complete: baseline TF-IDF and Logistic Regression sentiment classification model implemented and validated.
