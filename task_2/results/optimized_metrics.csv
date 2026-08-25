@@ -1,0 +1,11 @@
+metric,value
+accuracy,0.885
+precision,0.8737864077669902
+recall,0.9
+f1_score,0.8866995073891626
+true_negative,87.0
+false_positive,13.0
+false_negative,10.0
+true_positive,90.0
+test_observations,200.0
+best_cv_f1,0.8650452354292618
