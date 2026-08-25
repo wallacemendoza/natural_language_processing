@@ -40,6 +40,10 @@ GridSearchCV performed five-fold stratified cross-validation on the training par
 
 APA source acknowledgment and the cross-requirement citation audit are documented in [requirement_g_sources.md](requirement_g_sources.md).
 
+## Final Report
+
+The final Task 2 report is available as [D803_Task2_Natural_Language_Processing.docx](D803_Task2_Natural_Language_Processing.docx). It consolidates Requirements B through G and addresses professional communication under Requirement H.
+
 ## Libraries and Tools
 
 The project uses Python, pandas, scikit-learn, and matplotlib, with Visual Studio Code, Git, and GitLab supporting development and version control. A detailed description of the implementation libraries and development tools is available in [requirement_c_libraries_tools.md](requirement_c_libraries_tools.md).
@@ -76,4 +80,4 @@ task_2/
 
 ## Current Status
 
-Requirements B through G are complete. The baseline sentiment model has been implemented, evaluated, and optimized, and all external sources used in the project have been audited for APA-style citation and reference consistency. Final submission-document assembly and GitLab branch-history capture remain.
+Requirements B through H are complete. The working NLP model, evaluation, optimization, citations, and final Microsoft Word report are complete. The remaining submission-preparation step is to capture the final GitLab branch history and supporting evidence required by Requirement A.

@@ -16,7 +16,7 @@ scikit-learn 1.5.2 provides the NLP and machine-learning components for the base
 
 ### matplotlib
 
-matplotlib 3.10.9 is installed and reserved for the evaluation stage. It will support graphical model-evaluation output, particularly a confusion matrix visualization, once formal evaluation is implemented. The current Requirement B baseline does not import or use matplotlib.
+matplotlib 3.10.9 provides visualization support for model evaluation. The project uses it with scikit-learn's `ConfusionMatrixDisplay` to generate the baseline and optimized confusion-matrix images saved in the `results` directory.
 
 ## Development and Version Control Tools
 
@@ -43,7 +43,7 @@ PowerShell is the command-line environment used to run the Python application, i
 | Python 3.12.10 | Programming language and runtime |
 | pandas 2.3.3 | Dataset loading and validation |
 | scikit-learn 1.5.2 | TF-IDF, data splitting, pipeline, and classification |
-| matplotlib 3.10.9 | Future evaluation visualization |
+| matplotlib 3.10.9 | Model-evaluation visualization |
 | Visual Studio Code | Source-code development |
 | Git | Local version control |
 | GitLab | Remote repository and branch history |
